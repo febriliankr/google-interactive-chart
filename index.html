@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", {
+        packages: ["geochart"],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ["Country", "Popularity"],
+          ["Germany", 200],
+          ["United States", 300],
+          ["Brazil", 400],
+          ["Canada", 500],
+          ["France", 600],
+          ["RU", 700],
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(
+          document.getElementById("regions_div")
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Pengeluaran", "Rupiah"],
+          ["Pakaian", 5000000],
+          ["Buka Bersama", 1500000],
+          ["Hiburan", 2000000],
+          ["Belanja Bulanan", 800000],
+          ["Langganan Netflix", 200000],
+        ]);
+
+        var options = {
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart_3d")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="my-10">
+      <div class="bg-slate-100 w-full">
+        <div class="max-w-6xl mx-auto py-6">
+          <p class="text-slate-500">PUBLICATION DECEMBER 13, 2022</p>
+          <h1 class="font-medium text-slate-700 text-3xl">
+            December 2022 Indonesia Economic Quarterly: Strengthening
+            Competitiveness
+          </h1>
+        </div>
+      </div>
+    </main>
+    <div class="max-w-6xl mx-auto py-6">
+      <p class="mb-8 text-slate-600">
+        Indonesia's GDP growth during the third quarter remained broadly steady
+        at 5.2%, driven by domestic demand. Investments rebounded on the back of
+        stronger construction investment. While private consumption eased
+        slightly, a surge in government consumption kept total consumption
+        growth on an even keel. Current account deficit widened to 2.7% of GDP
+        in the third quarter. This was contributed by high crude oil prices
+        through October and continued robust growth in equipment investment.
+      </p>
+
+      <p class="mb-8 text-slate-600">
+        The Rupiah depreciated through October, with the currency reaching a
+        trough of IDR 15,237 per USD on October 30. Year-to-September, the
+        currency depreciated 8.2% in nominal terms and 7.6% real effective
+        terms,
+      </p>
+    </div>
+    <div class="max-w-6xl mx-auto mb-10">
+      <h3 class="text-3xl font-bold text-gray-700 text-center mb-10">
+        Pengeluaran Selviana Rizky
+      </h3>
+      <div id="piechart_3d" style="width: 100%; height: 460px"></div>
+      <div>
+        <div class="flex justify-center gap-4">
+          <h3 class="text-3xl font-bold text-gray-700">Rp7.523.988</h3>
+          <div class="flex items-end gap-1 text-green-500">
+            <svg
+              class="w-3"
+              viewBox="0 0 12 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>2%</span>
+          </div>
+        </div>
+        <span class="block text-center text-gray-500"
+          >Compared to last week Rp7.223.988</span
+        >
+      </div>
+    </div>
+    <hr class="my-20" />
+
+    <h3 class="text-3xl font-bold text-gray-700 text-center mb-10">
+      Worldwide Popularity
+    </h3>
+    <div class="max-w-6xl mx-auto mb-10">
+      <div id="regions_div" style="width: 100%; height: 500px"></div>
+    </div>
+    <footer class="w-full bg-slate-100 h-40"></footer>
+  </body>
+</html>
